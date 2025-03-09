@@ -49,6 +49,7 @@ def check_for_activity():
     question = """ I am training at the gym. I just did a set of benchpress GYM_ACTIVITY,
     write the activity, weight as float number, unit as string, reps as integer, sets as integer values 
     for each of the follow activity seperate by comma.
+    if the activity has multiple sets,duplicate the result per set.
     if there are multiple activities, split them to different results.
     result format each result different line: add_activity("activity", weight, "unit", reps, sets).
     """
@@ -72,9 +73,9 @@ def check_for_activity():
 def main():
     print("----- generate_content ------")
     print("-- Start --")
-    #check_for_activity()
-    result_image = generate_content_with_images("Describe the images.", ["bonnie.jpg"])
-    print("\nImage Description:\n", result_image)
+    check_for_activity()
+    #result_image = generate_content_with_images("Describe the images.", ["bonnie.jpg"])
+    #print("\nImage Description:\n", result_image)
     print("-- End --")
 
 
