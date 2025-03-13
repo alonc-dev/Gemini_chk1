@@ -64,9 +64,17 @@ def check_for_activity():
         prompt = f'{question}\n GYM_ACTIVITY: {txt}'
         #print(prompt)
         answer = generate_text(prompt)
-        my_fun = f"add_activity({answer})"
-        print(answer)
+        my_funs_arr = answer.split("\n")
+        for my_fun in my_funs_arr:
+            if my_fun.startswith("add_activity"):
+                print(my_fun)
+                eval(my_fun)
 
+
+###############################################
+
+def add_activity(activity, weight, unit, reps, sets):
+    print(f"** add_activity('{activity}', {weight}, '{unit}', {reps}, {sets})")
 
 ###############################################
 
